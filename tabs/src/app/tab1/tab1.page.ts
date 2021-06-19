@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  imagen = "http://localhost:8100/assets/img/red-wine-test.jpg";
+  imagen = "https://catalogo-bodega.netlify.app/assets/img/red-wine-test.jpg";
   productos: Producto[] = [];
 
   constructor(private prodService: ProductosService) {
@@ -17,6 +17,6 @@ export class Tab1Page {
   }
 
   getProductos() {
-    this.prodService.getAll().subscribe( data => this.productos = data);
+    this.prodService.getAll().subscribe(data => this.productos = data);
   }
 }
