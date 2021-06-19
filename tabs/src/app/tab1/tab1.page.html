@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Cat&aacute;logo
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,36 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Cat&aacute;logo</ion-title>
     </ion-toolbar>
   </ion-header>
+ 
+  <!-- fab placed in the center of the content with a list on each side -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button><ion-icon name="logo-whatsapp"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start" onclick="window.open('https://www.instagram.com/bodega_official_605/?hl=es-la', '_system', 'location=yes'); return false;">
+      <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card *ngFor= "let pro of productos">
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-img [src]="imagen"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h1 text-capitalize>{{ pro.Nombre }}</h1>
+        <h2 text-capitalize>{{pro.Marca}}</h2>
+        <h2 text-capitalize>{{pro.Precio | currency}}</h2>
+        <p>{{pro.Descripcion}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+  
+
 </ion-content>

@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
+  mostrarTabDos = false;
+  mostrarTabTres = false;
+
   constructor() {}
 
 }

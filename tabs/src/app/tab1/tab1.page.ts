@@ -1,3 +1,5 @@
+import { ProductosService } from './../productos.service';
+import { Producto } from './../models/Producto';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  imagen = "http://localhost:8100/assets/img/red-wine-test.jpg";
+  productos: Producto[] = [];
 
+  constructor(private prodService: ProductosService) {
+    this.getProductos();
+  }
+
+  getProductos() {
+    this.prodService.getAll().subscribe( data => this.productos = data);
+  }
 }
